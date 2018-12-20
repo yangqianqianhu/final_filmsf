@@ -1,0 +1,52 @@
+<html>
+<head>
+<title>SF Film Map</title>
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.51.0/mapbox-gl.js'></script>
+<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.51.0/mapbox-gl.css' rel='stylesheet' />
+<link href="https://fonts.googleapis.com/css?family=Lato|Major+Mono+Display|Staatliches" rel="stylesheet">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+<button id="about" class='button-default'><i class="fas fa-film"></i>&nbsp; About</button>
+<button id="reset" class='button-default'><i class="fas fa-redo"></i></i>&nbsp;Reset map</button>
+<div id="map"></div>
+<div class='modal'>
+    <h2 class='modal-title'>About this map</h2>
+    <div class='modal-body'><p>If you love movies, and you love San Francisco, you're bound to love this -- a map of the listing of filming locations of movies shot in San Francisco starting from 1924. You'll find the titles, locations, fun facts, names of the director, writer, actors, and studio for most of these films. <br> <br> Data Provided by <a href="https://filmsf.org/">San Francisco Film Commission</a>  <br> Visualized by <a href='mailto:yh9uc@virginia.edu'>Yangqianqian Hu</a> <br>Instructed by Andrea Hansen
+    </p></div>
+    <img class='img' src="filmsf.jpg" alt="filmsf">
+    <button class='close-button'>&times;</button>
+</div>
+<div id="screen"></div>
+    
+<div class='map-overlay' id='legend'></div>
+
+<div class='map-overlay' id='info-window'>
+    <div>
+        <h2>FILM SAN FRANCISCO</h2>
+    </div>
+</div>
+
+<div class='map-overlay' id='more-info'></div>
+
+<div id='layers-control'></div>
+
+<div class='opacity-ctrl'>
+        <label>Film Location Heat Map Opacity</label>
+        <input id='slider' type='range' min='0' max='100' step='0' value='100' />
+    </div>
+</div>
+
+<div class='filter-ctrl'>
+    <input id='filter-input' type='text' name='filter' placeholder='Filter by actor name' />
+</div>
+
+</body>
+<script src="map.js"></script>
+</html>
